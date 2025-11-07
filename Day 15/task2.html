@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 900px;
+            height: 300px;
+            border: 2px double green;
+            margin: 10px auto;
+            display: flex;
+        }
+
+        .card {
+            width: 200px;
+            height: 200px;
+            border: 2px solid red;
+            text-align: center;
+            padding-top: 40px;
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card">1</div>
+        <div class="card">2</div>
+        <div style="order: -1;" class="card">3</div>
+        <div style="flex-basis: 10%;" class="card">4</div>
+
+
+    </div>
+
+</body>
+
+</html>
