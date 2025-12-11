@@ -1,0 +1,163 @@
+<script>
+    //Write a program that checks if it’s raining or not and advises whether to take a raincoat.
+
+    // var isRaining = false;
+
+    // if (isRaining === true) {
+    //     console.log("take a raincoat")
+    // } else {
+    //     console.log("raincoat not required")
+    // }
+
+
+    //Q2. Create a program that determines if a CIBIL score is excellent, good, average, or poor based on given ranges.
+    //excellent  750-900
+    //good 650-749
+    //average 550-649
+    //poor  300-540
+
+    // var a = Number(prompt("a"));
+    // var b = Number(prompt("b"));
+
+    // console.log(a + b)
+    // // console.log(typeof (cibil))
+
+    // if (cibil >= 750 && cibil <= 900) {
+    //     console.log("Excellent")
+    // } else if (cibil >= 650 && cibil < 750) {
+    //     console.log("Good")
+    // } else if (cibil >= 550 && cibil < 650) {
+    //     console.log("Average")
+    // } else if (cibil >= 300 && cibil < 550) {
+    //     //500>=300 && 500<550=true && true=true
+    //     console.log("Poor")
+    // } else {
+    //     console.log("Invalid")
+    // }
+
+    //Q3. Validate a password based on its length and classify it as weak, or strong.
+
+    // var password = prompt('Enter Password......').trim();
+    // if (password.length >= 7) {
+    //     console.log("strong")
+    // } else {
+    //     console.log("Weak")
+    // }
+
+    // var p = 1000;
+    // var r = 10;
+    // var timeInmonth = 6;
+    // var timeInYear = timeInmonth / 12; //2 Year
+    // var SI = (p * r * timeInYear) / 50;
+
+
+    // if (timeInYear <= 1) {
+    //     var discount = SI * 0.10  //5
+    //     SI = SI - discount
+    // }
+
+    // console.log(p + SI)
+
+    //"Write a program to calculate the electricity bill based on the number of units consumed. Use the following conditions for the tariff rates:
+
+    // For the first 100 units: ₹3 per unit.
+    // For the next 200  ₹5 per unit.
+    // For units above 300: ₹10 per unit.
+    // Fixed surcharge: ₹50 added to the total bill."
+    var unit = 200;
+    var surcharge = 50;
+    var result = null;
+
+    if (unit > 0 && unit <= 100) {
+        result = unit * 3
+    } else if (unit > 100 && unit <= 300) {
+        result = unit * 5
+
+    } else if (unit > 300) {
+        result = unit * 10
+
+    }
+
+    console.log(result + surcharge)
+
+
+
+
+    //Check if the season is Autumn, Winter, Spring or Summer. If the user input is : September, October or November, the season is Autumn. December, January or February, the season is Winter. March, April or May, the season is Spring June, July or August, the season is Summer
+
+    //September, October or November----Autumn
+    // December, January or February----Winter
+    // March, April or May----Spring
+    // June, July or August----Summer
+
+    // var month = prompt("Enter Month-September, October, November, December, January, February, March, April, May, June, July, August").trim().toLowerCase();
+
+    // if (month === "september" || month === "october" || month === "november") {
+    //     console.log("Autumn")
+    // } else if (month === "december" || month === "january" || month === "february") {
+    //     console.log("Winter")
+    // } else if (month === "march" || month === "april" || month === "may") {
+    //     console.log("Spring")
+    // } else if (month === "june" || month === "july" || month === "august") {
+    //     console.log("Summer")
+    // } else {
+    //     console.log("Invalid Month")
+    // }
+
+
+    //Age and Membership Eligibility-Admitted to the club/You need membership/Too young to enter
+
+    // var age = 20;
+    // var membership = false;
+    // //if age >=18 && membership === true---admitted to the club
+    // //if age >=18 && membership === false---you need membership
+    // //if age <18 ---too young to enter
+
+    // if (age >= 18) {
+    //     if (membership === true) {
+    //         console.log("admitted to the club")
+    //     } else {
+    //         console.log("you need membership")
+    //     }
+
+    // } else {
+    //     console.log("too young to enter")
+    // }
+
+    // if (age >= 18 && membership === true) {
+    //     console.log("admitted to the club")
+
+    // } else if (age >= 18 && membership === false) {
+    //     console.log("you need membership")
+
+    // } else {
+    //     console.log("too young to enter")
+    // }
+
+    //Student Grade and Attendance Excellent - Eligible for prize/Good - Eligible for certificate./Not eligible due to low attendance
+
+    //if attendance >=75%  -----
+    //A---Excellent - Eligible for prize
+    //other---Good - Eligible for certificate.
+    //if atttendance <75% ---
+
+    // var attendance = 80;
+    // var grade = "B"
+    // if (attendance >= 75) {
+    //     if (grade === "A") {
+    //         console.log(" Eligible for prize")
+    //     } else {
+    //         console.log("Eligible for certificate.")
+    //     }
+
+    // } else {
+    //     console.log("Not eligible due to low attendance")
+    // }
+
+    //Room Access: Staff and Room Key-Access granted/Request room key from admin/Access denied
+    //if staff === true
+        //  if roomKey === true ---Access granted
+        //  else ---Request room key from admin
+
+
+</script>

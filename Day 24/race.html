@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 900px;
+            height: 500px;
+            border: 2px double black;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+        }
+
+        .box {
+            width: 100px;
+            height: 50px;
+            background-color: salmon;
+            border-radius: 0px 20px 20px 0px;
+            animation-name: race;
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
+            color: white;
+            font-size: 20px;
+        }
+
+        @keyframes race {
+            0% {
+                transform: translateX(0px);
+            }
+
+            50% {
+                transform: translateX(800px);
+            }
+
+            100% {
+                transform: translateX(0px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class=" box" style="animation-timing-function: linear;">Mahesh</div>
+        <div class="box" style="animation-timing-function: ease;">Subham</div>
+        <div class="box" style="animation-timing-function: ease-in;">Lokesh</div>
+        <div class=" box" style="animation-timing-function: ease-in-out;">Shivraj</div>
+        <div class=" box" style="animation-timing-function: ease-out;">Ankit</div>
+
+
+    </div>
+
+</body>
+
+</html>

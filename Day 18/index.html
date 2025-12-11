@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        .parent {
+            width: 800px;
+            height: 300px;
+            border: 2px double gold;
+            display: flex;
+            margin: 100px auto;
+        }
+
+        .box {
+            width: 150px;
+            height: 150px;
+            border: 2px solid red;
+
+        }
+
+        .box:nth-child(1) {
+            background-color: green;
+        }
+
+        .box:nth-child(2) {
+            background-color: yellow;
+            position: relative;
+            left: 200px;
+            top: 50px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+
+    </div>
+</body>
+
+</html>
