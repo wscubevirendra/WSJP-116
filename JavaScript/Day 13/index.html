@@ -1,0 +1,65 @@
+<script>
+    // function calculator(a = 0, b = 0, sign = "+") {
+    //     if (sign === "+") {
+    //         return a + b
+    //     } else if (sign === "-") {
+    //         return a - b
+    //     } else if (sign === "*") {
+    //         return a * b
+    //     } else if (sign === "/") {
+    //         return a / b
+    //     } else if (sign === "%") {
+    //         return a % b
+    //     } else {
+    //         return "Invalid sign"
+    //     }
+    //     console.log("Hello")
+
+
+    // }
+
+    // console.log(calculator(2, 2, "-"));
+    // calculator(2, 2, "*");
+    // calculator(2, 2, "+");
+    // calculator(10, 2, "/");
+
+
+    // function findMiddleElement(array) {
+    //     var len = array.length;  //6
+    //     var middleIndex = Math.floor(len / 2);  //3
+
+    //     if (len == 0) {
+    //         return null
+    //     }
+
+
+    //     if (len % 2 == 0) {
+    //         console.log(array[middleIndex - 1], array[middleIndex])
+    //     } else {
+    //         console.log(array[middleIndex])
+
+    //     }
+    // }
+
+
+    // // findMiddleElement([10, 20, 30, 40, 50])
+    // // findMiddleElement([10, 200, 300, 40, 50, 100])
+    // findMiddleElement([])
+
+
+    function countElement(array, element) {
+        var count = 0
+        for (var d of array) {
+            if (d === element) {
+                count++
+            }
+        }
+
+        console.log(count)
+
+    }
+
+    countElement([10, 10, 20, 30, 40, 10, 10], 10)
+    countElement(["ankit", "mohit", "sachin", "sachin", "priya","Sachin"], "sachin")
+
+</script>
