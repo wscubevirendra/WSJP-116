@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 800px;
+            height: 400px;
+            margin: 50px auto;
+            box-shadow: 0px 0px 0px 2px gray;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .item {
+            width: 100%;
+            height: 100%;
+            padding: 4px;
+            flex-shrink: 0;
+            transition: 600ms;
+        }
+
+        .item img {
+            width: 100%;
+            height: 100%;
+        }
+
+        button {
+            padding: 10px;
+            background-color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">
+            <img src="1.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="2.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="3.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="4.jpg" alt="">
+        </div>
+        <div class="item">
+            <img src="5.jpg" alt="">
+        </div>
+
+    </div>
+    <button onclick="nextSlide()">Next</button>
+    <button>Prev</button>
+
+    <script>
+        var items = document.getElementsByClassName("item")
+
+        var count = 0;
+        function nextSlide() {
+            count++
+            for (let img of items) {
+                img.style.transform = `translateX(-${count * 100}%)`
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

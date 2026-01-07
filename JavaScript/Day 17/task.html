@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 1000px;
+            height: 400px;
+            border: 2px double red;
+            margin: 50px auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+        }
+
+        .card {
+            width: 150px;
+            height: 150px;
+            box-shadow: 0px 0px 2px 2px red;
+            cursor: pointer;
+            transition: 500ms;
+
+        }
+
+        .done {
+            transform: scale(1.5);
+            background-color: gold;
+            border-radius: 20px;
+            font-size: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div onclick="toggleHandler(this)" class="card">1</div>
+        <div onclick="toggleHandler(this)" class="card">2</div>
+        <div onclick="toggleHandler(this)" class="card">3</div>
+        <div onclick="toggleHandler(this)" class="card">4</div>
+
+    </div>
+
+    <script>
+ 
+        function toggleHandler(box) {
+          box.classList.toggle("done")
+
+        }
+    </script>
+
+</body>
+
+</html>

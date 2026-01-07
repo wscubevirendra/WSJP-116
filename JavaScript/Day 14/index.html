@@ -1,0 +1,79 @@
+<script>
+    // var student = {
+    //     name: "Mahesh",
+    //     age: 24,
+    //     father_name: "Vikram ji",
+    //     friends: ["Yuvi", "Atul", "Chinu"]
+    // }
+
+    // for(st in student){
+    //     console.log(st,student[st])
+    // }
+
+    const students = [
+        {
+            name: "Raj",
+            age: 22,
+            city: "Jaipur"
+        },
+        {
+            name: "Shubham",
+            age: 28,
+            city: "kota"
+        },
+        {
+            name: "Shubham",
+            age: 28,
+            city: "kota"
+        },
+        {
+            name: "Amit",
+            age: 24,
+            city: "Jaipur"
+        },
+        {
+            name: "Vikas",
+            age: 23,
+            city: "Jaipur"
+        },
+        {
+            name: "Suresh",
+            age: 25,
+            city: "Udaipur"
+        },
+        {
+            name: "Mahesh",
+            age: 21,
+            city: "Kota"
+        },
+        {
+            name: "Ramesh",
+            age: 26,
+            city: "Bikaner"
+        }
+    ];
+
+    function countStudent(array, city) {
+        var newArray = []
+
+        for (var st of array) {
+            if (st.city == city) {
+                newArray.push(st.name);
+            }
+        }
+
+        console.log(newArray)
+
+
+    }
+
+    countStudent(students, "Kota")
+    countStudent(students, "Jaipur")
+    countStudent(students, "Bikaner")
+    countStudent(students, "Sikar")
+
+
+
+
+
+</script>

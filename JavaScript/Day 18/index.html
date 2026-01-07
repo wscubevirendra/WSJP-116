@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 50px;
+        }
+
+        .container {
+            width: 200px;
+            height: 200px;
+            border: 2px solid red;
+            transition: 400ms;
+
+        }
+
+        button {
+            background-color: red;
+            margin: 10px;
+            color: white;
+
+        }
+
+        .done {
+            box-shadow: 0px 0px 2px 2px red;
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+    </div>
+
+    <button id="btn">Click</button>
+    <script>
+
+        var btn = document.querySelector("#btn");
+        var box = document.querySelector(".container");
+
+
+        btn.addEventListener(
+            "click",
+            function (event) {
+                console.log(event.target)
+                box.classList.toggle("done")
+            }
+        )
+
+
+    </script>
+
+
+
+</body>
+
+</html>

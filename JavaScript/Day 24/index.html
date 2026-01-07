@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        .container {
+            width: 400px;
+            padding: 20px;
+            /* border: 2px solid red; */
+            background: #ff7b00;
+            color: white;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        button {
+            border: none;
+            outline: none;
+            padding: 4px;
+            border-radius: 4px;
+            background-color: seagreen;
+            color: white;
+            cursor: pointer;
+        }
+
+        .container h1 {
+            font-size: 60px;
+        }
+
+        .container p {
+            display: flex;
+            gap: 12px;
+            color: gray;
+        }
+
+        .done {
+            color: black;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .formet {
+            background: gray;
+            transition: all 300ms linear;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button>24HRS</button>
+        <h1>16:10:28</h1>
+        <p>
+
+        </p>
+
+    </div>
+
+    <script>
+        var h1 = document.querySelector(".container h1");
+        var p = document.querySelector(".container p");
+        var days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        var button = document.querySelector("button")
+        var toggle = false; //true
+
+        button.addEventListener("click", function () {
+            toggle = !toggle;
+            button.classList.toggle("formet");
+        })
+
+
+        function printDay() {
+            var d = new Date();
+            var day = d.getDay();
+            for (var i = 0; i < days.length; i++) {
+                var span = document.createElement("span");
+                span.innerText = days[i];
+                if (i == day) {
+                    span.classList.add("done")
+                }
+                p.appendChild(span)
+
+            }
+
+
+        }
+
+        printDay();
+
+
+
+        function clock() {
+            var d = new Date();
+            var h = d.getHours();
+            var m = d.getMinutes();
+            var s = d.getSeconds();
+            if (toggle == true && h > 12) {
+                h = h - 12
+            }
+
+            if (h < 10) h = "0" + h;
+            if (m < 10) m = "0" + m;
+            if (s < 10) s = "0" + s;
+            h1.innerText = `${h}:${m}:${s}`
+
+        }
+
+        setInterval(
+            clock,
+            1000
+        );
+
+
+    </script>
+</body>
+
+</html>

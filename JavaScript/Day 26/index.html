@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Movie Search App</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .input-container {
+            text-align: center;
+        }
+
+        input {
+            width: 600px;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px;
+            outline: none;
+        }
+
+        .movie-container {
+            width: 1200px;
+            margin: 30px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            row-gap: 30px;
+        }
+
+        .movie-card {
+            width: 260px;
+            background-color: #1c1c1c;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+
+            transition: transform 0.3s ease;
+        }
+
+        .movie-card:hover {
+            transform: scale(1.05);
+        }
+
+        .movie-thumb {
+            position: relative;
+            width: 100%;
+            height: 340px;
+        }
+
+        .movie-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .rating {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ffc107;
+            color: #000;
+            padding: 5px 8px;
+            font-size: 14px;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .movie-info {
+            padding: 12px;
+            text-align: center;
+        }
+
+        .movie-info h3 {
+            color: #fff;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="input-container">
+        <input id="input" type="text">
+    </div>
+    <div class="movie-container">
+
+    </div>
+
+
+
+    <script>
+
+        var TOP_MOVIES_APIURL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=1";
+        var IMGPATH = "https://image.tmdb.org/t/p/w1280";
+        var SEARCHAPI = "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
+
+        const moiveBox = document.querySelector("#movie-box");
+        var movie_container = document.querySelector(".movie-container");
+
+        async function fetchMovies(API) {
+            var response = await fetch(API);
+            var data = await response.json();
+            showMovies(data.results)
+        }
+
+        fetchMovies(TOP_MOVIES_APIURL);
+
+        function showMovies(movies) {
+            movie_container.innerHTML = ""
+            for (data of movies) {
+                var div = document.createElement("div");
+                div.classList.add("movie-card");
+                div.innerHTML = `<div class="movie-thumb">
+                        <img src=${IMGPATH + data.poster_path} alt="Movie Thumbnail">
+                        <span class="rating">⭐ ${data.rating}</span>
+                    </div>
+                    <div class="movie-info">
+                        <h3>${data.title}</h3>
+                    </div>`
+                movie_container.appendChild(div)
+            }
+        }
+
+
+
+
+        document.querySelector("#input").addEventListener(
+            "keyup",
+            function (event) {
+                if (event.target.value == "") {
+                    fetchMovies(TOP_MOVIES_APIURL);
+                } else {
+                    fetchMovies(SEARCHAPI + event.target.value);
+                }
+            }
+        )
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

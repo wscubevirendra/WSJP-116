@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="students">
+        <li>
+            <h3>Rahul</h3>
+            <p>Batch: MERN</p>
+            <button>Select</button>
+        </li>
+        <li>
+            <h3>Priya</h3>
+            <p>Batch: Python</p>
+            <button>Select</button>
+        </li>
+        <li>
+            <h3>Aman</h3>
+            <p>Batch: Java</p>
+            <button>Select</button>
+        </li>
+    </ul>
+
+    <script>
+        var buttons = document.querySelectorAll("button");
+
+        for (let btn of buttons) {
+            btn.addEventListener(
+                "click",
+                function () {
+                    var li = btn.parentNode;
+                    li.parentNode.style.background = "red"
+                    // li.nextElementSibling.style.background="red"
+                    // var h1 = li.children[0]
+                    // var p = li.children[1]
+
+                    // li.style.background = "red";
+                    // h1.style.color = "green";
+                    // p.style.color = "white";
+                }
+            )
+        }
+    </script>
+
+
+</body>
+
+</html>

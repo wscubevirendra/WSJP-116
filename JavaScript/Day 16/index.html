@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+    <style>
+        #demo {
+            background-color: red;
+            /* backgroundColor */
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="demo"><u>WsCube Tech Jaipur</u></h1>
+    <p id="course">
+        Best mern stack course in jaipur
+    </p>
+
+    <button onclick="demo()">Click</button>
+
+    <script>
+        var h1 = document.getElementById("demo");
+        var p = document.getElementById("course");
+        console.log(p.innerText)
+        function demo() {
+            h1.style.display = "none"
+            p.innerHTML = "<b>Enroll in the best MERN Stack course in Jaipur and learn to build responsive web applications from scratch. MERN is the most versatile stack comprising MongoDB, Express.js, React.js, and Node.js. We provide you with a great platform to build robust, full-stack, and data-driven apps. You will also learn to test, secure, deploy, and manage the apps and also acquire knowledge of JavaScript, Git, CSS, and HTML</b>"
+            p.style.backgroundColor = "green"
+            p.style.color = "white"
+            p.style.fontSize = "30px"
+
+
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

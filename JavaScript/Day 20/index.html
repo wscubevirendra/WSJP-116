@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+
+        .container {
+            width: 700px;
+            height: 400px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            margin: 30px auto;
+            padding: 16px;
+        }
+
+        .input-box {
+            display: flex;
+            gap: 20px;
+
+        }
+
+        input {
+            width: 100%;
+            padding: 6px;
+            outline: none;
+        }
+
+        #addBtn {
+            padding: 2px 20px;
+            background-color: brown;
+            color: white;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .container ul {
+            margin: 20px 0px;
+            list-style: none;
+        }
+
+        .container ul li {
+            background-color: white;
+            padding: 6px;
+            border-radius: 6px;
+            color: black;
+            box-shadow: rgba(50, 50, 93, 0.50) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+            font-size: 18px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .container ul li button {
+            background-color: salmon;
+            border: none;
+            border-radius: 6px;
+            padding: 4px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="input-box">
+            <input type="text">
+            <button id="addBtn">Add</button>
+        </div>
+        <ul>
+
+        </ul>
+
+    </div>
+    <script>
+        var btn = document.querySelector("#addBtn");
+        var inp = document.querySelector(".input-box input");
+        var list = document.querySelector(".container ul");
+
+
+        function addToDo() {
+            var value = inp.value.trim();
+            if (value == "") return alert("Empty input")
+            var li = document.createElement("li");
+            li.innerHTML = `${value} <button>Delete</button>`
+
+            li.querySelector("button").addEventListener(
+                "click",
+                function () {
+                    li.remove();
+                }
+            )
+
+
+            list.prepend(li)
+            inp.value = ""
+        }
+
+
+        inp.addEventListener(
+            "keypress",
+            function (event) {
+                if (event.key == "Enter") {
+                    addToDo()
+                }
+            }
+        )
+
+
+        btn.addEventListener(
+            "click",
+            addToDo
+        )
+    </script>
+
+</body>
+
+</html>
