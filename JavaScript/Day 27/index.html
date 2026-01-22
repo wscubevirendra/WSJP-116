@@ -1,0 +1,24 @@
+<script>
+
+    const obj1 = {
+        name: "Mahesh",
+        age: 23,
+        demo: function () {
+            console.log(this)
+            window.setTimeout(
+               function(){
+                console.log(this.age)
+               }, 2000
+            )
+        }
+    }
+
+    obj1.demo();
+console.log(this)
+
+
+
+
+
+
+</script>
